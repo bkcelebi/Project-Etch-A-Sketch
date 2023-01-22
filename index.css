@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #ededed;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    font-size: 30px;
+}
+
+#wrapper{
+    background: #ededed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap-reverse;
+}
+
+#controlPanel{
+    width: 150px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+}
+
+#color{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#color::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+#color::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+button{
+    background-color: transparent;
+    width: 150px;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#squareControl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+#container{
+    width: 500px;
+    height: 500px;
+    background: white;
+    margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divs{
+    background: plum;
+    flex-grow: 1;
+    align-self: flex-start;
+    height: auto;
+}
