@@ -1,29 +1,136 @@
 "use strict"
 
-const gridSquare = 10;
-const amountOfSquare = 500 / gridSquare;
 const container = document.querySelector('#container');
-
-
-//Control panel
 const range = document.querySelector('#range');
-const rangeVal = document.querySelector('#rangeVal');
+const rangeDisplay = document.querySelector('#rangeDisplay');
+const amountOfSquare = range.value;
+const clear = document.querySelector('#clear');
+const eraser = document.querySelector('#eraser');
+const colorPalette = document.querySelector('#colorPalette');
+const colorMode = document.querySelector('#colorMode');
 
-for (let i = 0; i < amountOfSquare; i++){
-    let divs = document.createElement('div');
-    divs.classList.add('divs');
-    divs.innerText = i; 
-    container.appendChild(divs);
+//set the column amount for container class
+const setGridAttribute = amountOfColumn => {
+    container.setAttribute(
+        'style', 
+        `grid-template-columns: repeat(${amountOfColumn}, auto);`
+        );
+};
+
+//create the squares themselves in the playground
+const createSquares = (amountOfSquare = 16) => {
+
+    for (let i = 0; i < amountOfSquare**2; i++){
+        const divs = document.createElement('div');
+        divs.classList.add('divs');
+        container.appendChild(divs);
+    };
+};
+
+//change the color palette and pass it to draw function
+colorPalette.onclick = function(){
+    colorPalette.addEventListener('change', () => {
+        draw(colorPalette.value);
+    });
+};
+
+let colorBtnActive = false;
+colorMode.onclick = function(){
+    draw(colorPalette.value);
+    colorBtnActive = true;
+};
+
+//erase the drawing
+eraser.onclick = function(){
+    draw('white');
+};
+
+//DRAWING
+const draw = (color = colorPalette.value) => {
+    console.log(colorPalette.value)
+    const divs = document.querySelectorAll('.divs');
+
+    divs.forEach(div => div.addEventListener("mousemove", e => {
+        e.target.style.background = color;
+    }));
+    
+};
+
+//control the playground
+const controlPlayground = () => {
+
+    //DEFAULT SQUARE CREATION
+    //getting the default value of range input
+    const defaultAmountOfSquare = range.value;
+    
+    //16X16 default amount of squares
+    rangeDisplay.innerText = `${defaultAmountOfSquare} x ${defaultAmountOfSquare}`;
+
+    //set the column amount for the default value
+    setGridAttribute(amountOfSquare);
+
+    //creating default amount of squares
+    createSquares();
+
+    //drawing
+    draw();
+
+    clear.addEventListener('mousedown', () => {
+
+        container.textContent = ''; 
+
+        //creating adjusted amount of squares    
+        createSquares(defaultAmountOfSquare);
+
+        //drawing
+        draw("white");
+    });
+
+    //ADJUSTED SQUARE CREATION
+    //capturing the input event when range is changed
+    range.addEventListener('input', () => {
+        
+        //getting the value of adjusted range input
+        const adjustedAmountOfSquare = range.value;
+        
+        //set the range display
+        rangeDisplay.textContent = `${adjustedAmountOfSquare} x ${adjustedAmountOfSquare}`;
+
+        //set the column amount dynamically
+        setGridAttribute(adjustedAmountOfSquare);
+        
+        //reset the playground
+        container.textContent = '';
+
+        //creating adjusted amount of squares    
+        createSquares(adjustedAmountOfSquare);
+
+        //drawing
+        draw();
+
+        clear.addEventListener('mousedown', () => {
+
+            container.textContent = ''; 
+    
+            //creating adjusted amount of squares    
+            createSquares(adjustedAmountOfSquare);
+    
+            //drawing
+            draw("white");
+        });
+    });
+
 
 };
 
+controlPlayground();
 
 
 
 
-//Control panel
 
-rangeVal.innerText = `${range.value} x ${range.value}`;
-range.addEventListener('input', e => {
-    rangeVal.textContent = `${range.value} x ${range.value}`;
-});
+
+
+
+
+

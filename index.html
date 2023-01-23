@@ -10,35 +10,48 @@
 </head>
 <body>
 
-    <h1>Etch-a-sketch</h1>
+    <img src="./assets/etchASketch.png" 
+    alt="logo"
+    width="250px"
+    height="auto">
 
     <div id="wrapper">
-
-        <div id="controlPanel">
-
-            <input type="color" 
-            id="color"
-            name="color" 
-            value="#29A7B3">
     
-            <button>Color mode</button>
-            <button>Rainbow mode</button>
-            <button>Eraser</button>
-            <button>Clear</button>
-    
-            <div id="squareControl">
-                <label for="range" id="rangeVal"></label>
-                <input type="range" 
-                name="range" 
-                id="range" 
-                min="1" 
-                max="64"
-                value="16">
+        <div id="bezel">
+            <div id="topPart">
+                <div id="colorPart">
+                    <label for="colorPalette">Colour</label>
+                    <input type="color" 
+                    id="colorPalette"
+                    name="colorPalette" 
+                    value="#333333">
+                </div>
+                
+
+                <div id="squareControl">
+                    <label for="range" id="rangeDisplay"></label>
+                    <input type="range" 
+                    name="range" 
+                    id="range" 
+                    min="1" 
+                    max="64"
+                    value="16">
+                </div>
+                
             </div>
+
+            <div id="container"></div>
             
+            <div id="bottomPart">
+                <button id="colorMode" autofocus>Draw</button>
+                <div id="deletion">
+                    <button id="eraser">Eraser</button>
+                    <button id="clear">Clear</button>
+                </div>
+            </div>
+        
         </div>
-    
-        <div id="container"></div>
+        
         
     </div>
     
