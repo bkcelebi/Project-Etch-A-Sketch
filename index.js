@@ -34,10 +34,8 @@ colorPalette.onclick = function(){
     });
 };
 
-let colorBtnActive = false;
 colorMode.onclick = function(){
     draw(colorPalette.value);
-    colorBtnActive = true;
 };
 
 //erase the drawing
@@ -47,10 +45,10 @@ eraser.onclick = function(){
 
 //DRAWING
 const draw = (color = colorPalette.value) => {
-    console.log(colorPalette.value)
     const divs = document.querySelectorAll('.divs');
 
-    divs.forEach(div => div.addEventListener("mousemove", e => {
+    divs.forEach(div => div.addEventListener("touchmove", e => {
+        
         e.target.style.background = color;
     }));
     
@@ -59,6 +57,7 @@ const draw = (color = colorPalette.value) => {
 //control the playground
 const controlPlayground = () => {
 
+    console.log(navigator.userAgent);
     //DEFAULT SQUARE CREATION
     //getting the default value of range input
     const defaultAmountOfSquare = range.value;

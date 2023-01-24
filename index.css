@@ -8,14 +8,27 @@ body{
     background: #ededed;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 20px;
-    gap: 30px;
     background-image: url("./assets/background2.png");
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+}
+
+@media (max-width: 800px){
+    body{
+        transform: scale(.75);
+    }
+
+}
+
+@media (max-width: 500px){
+    body{
+        transform: scale(.5);
+    }
+
 }
 
 #wrapper{
@@ -25,6 +38,37 @@ body{
     flex-wrap:wrap-reverse;
     width: 100%;
     
+}
+
+#bezel{
+    width: 650px;
+    height: 700px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: red;
+    box-shadow: 0 0 1rem #ff0800;
+    border-radius: .5rem;
+    flex: 0 1 auto;
+}
+
+#topPart{
+    display: flex;
+    width: 650px;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0 30px 0 30px; */
+}
+
+#colorPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    flex: 1;
 }
 
 #colorPalette{
@@ -48,46 +92,25 @@ body{
     border: none;
 }
 
+#logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
 #squareControl{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
     font-size: 20px;
+    flex: 1;
+
 }
 
 #squareControl input{
     accent-color: rgb(24, 76, 72);
-}
-
-#bezel{
-    width: 650px;
-    height: 700px;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: red;
-    box-shadow: 0 0 1rem #ff0800;
-    border-radius: .5rem;
-    flex: 0 1 auto;
-}
-
-#topPart{
-    display: flex;
-    width: 650px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px 0 30px;
-}
-
-#colorPart{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
 }
 
 #container{
