@@ -48,7 +48,7 @@ const draw = (color = colorPalette.value) => {
     const divs = document.querySelectorAll('.divs');
 
     divs.forEach(div => div.addEventListener("touchmove", e => {
-        
+        e.preventDefault();
         e.target.style.background = color;
     }));
     
