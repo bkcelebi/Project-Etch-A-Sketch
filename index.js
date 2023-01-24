@@ -34,6 +34,7 @@ colorPalette.onclick = function(){
     });
 };
 
+
 colorMode.onclick = function(){
     draw(colorPalette.value);
 };
@@ -47,8 +48,7 @@ eraser.onclick = function(){
 const draw = (color = colorPalette.value) => {
     const divs = document.querySelectorAll('.divs');
 
-    divs.forEach(div => div.addEventListener("touchmove", e => {
-        e.preventDefault();
+    divs.forEach(div => div.addEventListener("mousemove", e => {
         e.target.style.background = color;
     }));
     
