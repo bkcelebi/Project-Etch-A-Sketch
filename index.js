@@ -57,7 +57,6 @@ const draw = (color = colorPalette.value) => {
 //control the playground
 const controlPlayground = () => {
 
-    console.log(navigator.userAgent);
     //DEFAULT SQUARE CREATION
     //getting the default value of range input
     const defaultAmountOfSquare = range.value;

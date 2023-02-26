@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <title>Project: Etch-A-Sketch</title>
-
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
-
-    
 
     <div id="wrapper">
     
@@ -47,19 +45,32 @@
             
             <div id="bottomPart">
                 <button id="colorMode" autofocus>Draw</button>
+                <footer>
+                    <p>
+                        Copyright ©
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                    <a href="https://github.com/bkcelebi" target="_blank">
+                        <img src="./assets/KC_DEV_trans.png"
+                        alt="logo"
+                        height="75px">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </footer>
                 <div id="deletion">
                     <button id="eraser">Eraser</button>
                     <button id="clear">Clear</button>
                 </div>
             </div>
-        
         </div>
-        
-        
     </div>
-    
-    
 
+    <script
+        src="https://kit.fontawesome.com/5c9a0150f6.js"
+        crossorigin="anonymous"
+    ></script>
     <script src="./index.js"></script>
 </body>
 </html>

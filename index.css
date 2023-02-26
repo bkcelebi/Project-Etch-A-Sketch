@@ -14,22 +14,18 @@ body{
     background-image: url("./assets/background2.png");
     background-attachment: fixed;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-
 }
 
 @media (max-width: 800px){
     body{
         transform: scale(.75);
     }
-
 }
 
 @media (max-width: 500px){
     body{
         transform: scale(.5);
     }
-
 }
 
 #wrapper{
@@ -160,4 +156,20 @@ button{
 #colorMode:hover,
 #eraser:hover{
     transform: scale(1.1);
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: auto;
+    height: 5%;
+}
+
+footer a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 5px;
 }
